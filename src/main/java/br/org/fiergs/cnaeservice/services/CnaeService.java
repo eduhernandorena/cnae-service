@@ -28,9 +28,9 @@ public class CnaeService {
         return optCnae.orElseGet(ArrayList::new);
     }
 
-    public Cnae findByContr(String contr) {
-        Optional<Cnae> optCnae = cnaeRepository.findByContr(contr);
-        return optCnae.orElseGet(null);
+    public List<Cnae> findByContr(String contr) {
+        Optional<List<Cnae>> optCnae = cnaeRepository.findByContr(contr);
+        return optCnae.orElseGet(ArrayList::new);
     }
 
     public Cnae findByCode(String code) {

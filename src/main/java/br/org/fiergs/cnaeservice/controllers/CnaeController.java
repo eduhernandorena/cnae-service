@@ -26,6 +26,11 @@ public class CnaeController {
         return cnaeService.findByDescription(description);
     }
 
+    @GetMapping("/code/{code}")
+    public Cnae findByCode(@PathVariable("code") String code) {
+        return cnaeService.findByCode(code);
+    }
+
     @GetMapping("/industry/{industry}")
     public List<Cnae> listByIndustry(@PathVariable("industry") String industry){
         return cnaeService.findByIndustry(industry);
@@ -33,7 +38,7 @@ public class CnaeController {
 
     @GetMapping("/contr/{contr}")
     public List<Cnae> listByContr(@PathVariable("contr") String contr){
-        return cnaeService.findByDescription(contr);
+        return cnaeService.findByContr(contr);
     }
 
     @PostMapping
