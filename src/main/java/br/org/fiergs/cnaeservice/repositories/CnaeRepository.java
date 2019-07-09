@@ -19,7 +19,7 @@ public interface CnaeRepository extends JpaRepository<Cnae, Long> {
 
     Optional<List<Cnae>> findByDescriptionContainingIgnoreCase(String description);
 
-    @Query("select o from Cnae o where (upper(description) like %?1% or code = ?2) and id <> ?3")
-    Optional<Cnae> findOneByDescriptionContainingIgnoreCaseOrCodeAndIdNot(String description, String code, Long id);
+    @Query("select o from Cnae o where (upper(description) = upper(?1) or code = ?2) and id <> ?3")
+    Optional<Cnae> findOneByDescriptionIgnoreCaseOrCodeAndIdNot(String description, String code, Long id);
 
 }

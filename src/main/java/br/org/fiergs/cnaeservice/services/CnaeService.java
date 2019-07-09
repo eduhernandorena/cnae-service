@@ -49,7 +49,7 @@ public class CnaeService {
     }
 
     public Cnae update(Cnae cnae) {
-        Optional<Cnae> optCnae = cnaeRepository.findOneByDescriptionContainingIgnoreCaseOrCodeAndIdNot(cnae.getDescription(), cnae.getCode(), cnae.getId());
+        Optional<Cnae> optCnae = cnaeRepository.findOneByDescriptionIgnoreCaseOrCodeAndIdNot(cnae.getDescription(), cnae.getCode(), cnae.getId());
         if (optCnae.isEmpty()) {
             return cnaeRepository.save(cnae);
         } else {
