@@ -11,10 +11,12 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 @Entity
+@Table(name = "CAD_CNAE")
+@SequenceGenerator(name = "seqCad_Cnae", sequenceName = "SEQCAD_CNAE", allocationSize = 1)
 public class Cnae {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "seqCad_Cnae")
     private Long id;
 
     @NotEmpty(message = "Código é obrigatório!")
