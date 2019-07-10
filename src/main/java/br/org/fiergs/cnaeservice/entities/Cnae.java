@@ -30,6 +30,7 @@ public class Cnae {
     private String industry;
 
     @ManyToOne
+    @JoinColumn(name = "id_cnae")
     private Cnae superior;
 
     private boolean ipi = false;
